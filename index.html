@@ -11,10 +11,10 @@
     <meta property="og:title" content="Medipep | Bio-Material Innovation">
     <meta property="og:description" content="Next-Generation Bio Materials & Molecular Engineering.">
     <!-- Updated Thumbnail Image URL -->
-    <meta property="og:image" content="https://collection.cloudinary.com/dnzaz71su/bf7658a0b2b9156a6214bb44673df89e">
-    <meta property="og:url" content="https://your-website-url.com">
+    <meta property="og:image" content="https://res.cloudinary.com/dnzaz71su/image/upload/v1769250622/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-01-24_142154_eam5qh.png">
+    <meta property="og:url" content="https://medipep.com">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://collection.cloudinary.com/dnzaz71su/bf7658a0b2b9156a6214bb44673df89e">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnzaz71su/image/upload/v1769250622/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-01-24_142154_eam5qh.png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,7 +46,6 @@
             object-fit: cover;
             filter: brightness(0.4) contrast(1.1);
         }
-
         .hero-overlay {
             position: absolute; top: 0; left: 0;
             width: 100%; height: 100%;
@@ -92,13 +91,16 @@
         .menu-item:hover { color: var(--cyan-accent); }
         
         .sub-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; background: rgba(255, 255, 255, 0.02); padding-left: 1rem; }
-        .has-sub-menu:hover > .sub-menu { max-height: 2000px; }
+        .has-sub-menu:hover > .sub-menu { max-height: 2500px; }
 
         .sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.4s; border-left: 1px solid rgba(0, 242, 255, 0.1); margin-left: 0.5rem; padding-left: 0.8rem; }
-        .has-sub-sub-menu:hover > .sub-sub-menu { max-height: 600px; }
+        .has-sub-sub-menu:hover > .sub-sub-menu { max-height: 800px; }
 
         .sub-sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.4s; border-left: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.25rem; padding-left: 1rem; }
-        .has-sub-sub-sub-menu:hover > .sub-sub-sub-menu { max-height: 400px; }
+        .has-sub-sub-sub-menu:hover > .sub-sub-sub-menu { max-height: 500px; }
+
+        .sub-sub-sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.3s; border-left: 1px solid rgba(255, 255, 255, 0.03); margin-top: 0.2rem; padding-left: 1rem; }
+        .has-sub-sub-sub-sub-menu:hover > .sub-sub-sub-sub-menu { max-height: 200px; }
 
         .product-item { font-size: 0.75rem; padding: 0.4rem 0; color: rgba(255, 255, 255, 0.35); display: block; transition: 0.3s; text-transform: uppercase; }
         .product-item:hover { color: var(--cyan-accent); }
@@ -107,16 +109,22 @@
         .glow-btn {
             display: inline-block;
             transition: all 0.4s ease;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.15);
-            border: 1px solid rgba(0, 242, 255, 0.4);
-            background: rgba(0, 242, 255, 0.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            border: 1px solid #ffffff; /* White default border */
+            background: rgba(255, 255, 255, 0.03);
             text-align: center;
         }
-        .glow-btn:hover { background-color: #00f2ff; color: black; box-shadow: 0 0 30px rgba(0, 242, 255, 0.5); transform: scale(1.02); }
+        .glow-btn:hover { 
+            background-color: var(--cyan-accent); /* Blue hover effect */
+            color: black; 
+            border-color: var(--cyan-accent);
+            box-shadow: 0 0 35px rgba(0, 242, 255, 0.6); 
+            transform: scale(1.02); 
+        }
 
         .secondary-btn {
             display: block; width: 100%; max-width: 280px;
-            padding: 0.9rem; margin: 0 auto;
+            padding: 1rem; margin: 0 auto;
             border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.15);
             background: rgba(255, 255, 255, 0.03);
             font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
@@ -124,36 +132,32 @@
         }
         .secondary-btn:hover { border-color: var(--cyan-accent); color: var(--cyan-accent); background: rgba(0, 242, 255, 0.05); }
 
-        /* Leadership Section Fixes */
+        /* Leadership Cards - Optimized for mobile/fold */
         .leadership-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem 1.5rem; border-radius: 2rem; transition: 0.4s;
-            width: 100%; max-width: 100%;
+            padding: 2rem 1rem; border-radius: 2rem; transition: 0.4s;
+            width: 100%;
         }
-        .leadership-card:hover { transform: translateY(-5px); border-color: var(--cyan-accent); }
 
-        .flag-btn {
-            width: 24px; height: 16px; border-radius: 2px;
-            overflow: hidden; cursor: pointer; opacity: 0.4; transition: 0.3s;
+        /* Email No Wrapping Fix */
+        .email-link {
+            white-space: nowrap;
+            display: inline-block;
+            font-size: clamp(0.7rem, 4.2vw, 1.8rem); /* Fluid size for Z Fold */
+            color: var(--cyan-accent);
+            text-decoration: none;
+            transition: 0.3s;
+            max-width: 100%;
         }
-        .flag-btn.active { opacity: 1; box-shadow: 0 0 8px var(--cyan-accent); }
+        .email-link:hover { text-decoration: underline; opacity: 0.8; }
 
-        /* Scanline Anim */
-        .scanline {
-            width: 100%; height: 100%;
-            position: absolute; top: 0; left: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 242, 255, 0.01) 50%);
-            background-size: 100% 4px; z-index: 2; pointer-events: none;
-            animation: scanMove 8s linear infinite;
-        }
-        @keyframes scanMove { from { background-position: 0 0; } to { background-position: 0 100%; } }
-
-        /* Fold/Mobile Specific Responsive Fonts */
+        /* Mobile specific adjustments */
         @media (max-width: 480px) {
-            .hero-title { font-size: 2.25rem !important; }
-            .hero-desc { font-size: 0.875rem !important; }
-            .leadership-name { font-size: 1.125rem !important; }
+            .hero-title { font-size: clamp(2rem, 11vw, 4.5rem) !important; }
+            .hero-desc { font-size: 0.85rem !important; padding: 0 15px; }
+            #leadership { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .grid-cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
         }
     </style>
 </head>
@@ -165,97 +169,96 @@
     <div id="side-menu">
         <div class="p-8 flex flex-col h-full">
             <div class="flex justify-between items-center mb-10">
-                <span class="orbitron text-lg font-bold text-cyan-400" data-key="menu-title">NAVIGATION</span>
+                <span class="orbitron text-lg font-bold text-cyan-400">NAVIGATION</span>
                 <button onclick="toggleMenu()" class="text-white/60 text-2xl"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
             <nav class="flex flex-col gap-1">
-                <a href="#history" onclick="toggleMenu()" class="menu-item orbitron text-sm"><span data-key="m1">COMPANY HISTORY</span></a>
-                <a href="#leadership" onclick="toggleMenu()" class="menu-item orbitron text-sm"><span data-key="m2">LEADERSHIP</span></a>
+                <a href="#history" onclick="toggleMenu()" class="menu-item orbitron text-sm">COMPANY HISTORY</a>
+                <a href="#leadership" onclick="toggleMenu()" class="menu-item orbitron text-sm">LEADERSHIP</a>
                 
                 <div class="menu-item-container has-sub-menu">
-                    <div class="menu-item orbitron text-sm flex justify-between items-center">
-                        <span data-key="m3">CORE TECHNOLOGY</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
-                    </div>
+                    <div class="menu-item orbitron text-sm flex justify-between items-center text-white/50">CORE TECHNOLOGY <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
                     <div class="sub-menu">
-                        <a href="#" class="block py-3 text-xs opacity-60 uppercase" data-key="s1">Supercritical CO2 Process</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 uppercase tracking-widest font-bold">Supercritical CO2 Process</a>
                     </div>
                 </div>
 
                 <div class="menu-item-container has-sub-menu">
-                    <div class="menu-item orbitron text-sm flex justify-between items-center">
-                        <span data-key="m4">CORE MATERIALS</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
-                    </div>
+                    <div class="menu-item orbitron text-sm flex justify-between items-center text-white/50">CORE MATERIALS <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
                     <div class="sub-menu">
-                        <a href="#" class="block py-3 text-xs opacity-60" data-key="s2">CHITOGEN™</a>
-                        <a href="#" class="block py-3 text-xs opacity-60" data-key="s3">REGENMATRIX™</a>
-                        <a href="#" class="block py-3 text-xs opacity-60" data-key="s4">CHITOGENIX™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">CHITOGEN™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">REGENMATRIX™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">CHITOGENIX™</a>
                     </div>
                 </div>
 
-                <!-- Products | Brands Menu -->
+                <!-- Products | Brands: Accurate Hierarchy -->
                 <div class="menu-item-container has-sub-menu">
-                    <div class="menu-item orbitron text-sm flex justify-between items-center">
-                        <span data-key="m5">Products | Brands</span><i class="fa-solid fa-chevron-down text-[10px]"></i>
-                    </div>
+                    <div class="menu-item orbitron text-sm flex justify-between items-center text-cyan-400 font-bold">Products | Brands <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
                     <div class="sub-menu">
-                        <!-- Skin Booster -->
-                        <div class="has-sub-sub-menu py-2">
-                            <div class="text-xs flex justify-between items-center opacity-80 uppercase"><span data-key="s5">Skin Booster</span> <i class="fa-solid fa-plus text-[8px]"></i></div>
+                        
+                        <!-- 1. Skin Booster -->
+                        <div class="has-sub-sub-menu py-2 border-b border-white/5">
+                            <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Skin Booster <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu py-1">
-                                    <div class="text-[11px] opacity-60 flex justify-between items-center"><span data-key="b1">RESNOVAE</span> <i class="fa-solid fa-caret-down"></i></div>
+                                <div class="has-sub-sub-sub-menu">
+                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
                                     <div class="sub-sub-sub-menu mt-1">
-                                        <div class="has-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center"><span data-key="p6">Face Solution</span> <i class="fa-solid fa-plus text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-menu">
-                                                <a href="#" class="product-item" data-key="p1-short">CRYSTAL</a>
-                                                <a href="#" class="product-item" data-key="p2-short">CRYSTAL PLUS</a>
+                                        <!-- Face Solution -->
+                                        <div class="has-sub-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Face Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
+                                            <div class="sub-sub-sub-sub-menu">
+                                                <a href="#" class="product-item">CRYSTAL</a>
+                                                <a href="#" class="product-item">CRYSTAL PLUS</a>
                                             </div>
                                         </div>
-                                        <div class="has-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center"><span data-key="p7">Scalp Solution</span> <i class="fa-solid fa-plus text-[7px]"></i></div>
-                                            <div class="sub-sub-menu">
-                                                <a href="#" class="product-item" data-key="p3-short">SCALP MD</a>
+                                        <!-- Scalp Solution -->
+                                        <div class="has-sub-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
+                                            <div class="sub-sub-sub-sub-menu">
+                                                <a href="#" class="product-item">SCALP MD</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="block py-2 text-[11px] opacity-60" data-key="b2">MEDINOVAE</a>
+                                <a href="#" class="block py-2 text-[11px] opacity-60 uppercase">MEDINOVAE</a>
                             </div>
                         </div>
 
-                        <!-- Cosmetics -->
-                        <div class="has-sub-sub-menu py-2">
-                            <div class="text-xs flex justify-between items-center opacity-80 uppercase"><span data-key="s6">Cosmetics</span> <i class="fa-solid fa-plus text-[8px]"></i></div>
+                        <!-- 2. Cosmetics -->
+                        <div class="has-sub-sub-menu py-2 border-b border-white/5">
+                            <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Cosmetics <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu py-1">
-                                    <div class="text-[11px] opacity-60 flex justify-between items-center"><span data-key="b1">RESNOVAE</span> <i class="fa-solid fa-caret-down"></i></div>
-                                    <div class="sub-sub-menu mt-1">
-                                        <a href="#" class="product-item" data-key="p6">Face Solution</a>
-                                        <a href="#" class="product-item" data-key="p7">Scalp Solution</a>
+                                <div class="has-sub-sub-sub-menu">
+                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold text-white">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
+                                    <div class="sub-sub-sub-menu mt-1">
+                                        <a href="#" class="product-item">Face Solution</a>
+                                        <a href="#" class="product-item">Scalp Solution</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Beauty Device -->
+                        <!-- 3. Beauty Device -->
                         <div class="has-sub-sub-menu py-2">
-                            <div class="text-xs flex justify-between items-center opacity-80 uppercase"><span data-key="s7">Beauty Home-care Device</span> <i class="fa-solid fa-plus text-[8px]"></i></div>
+                            <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Beauty Home-care Device <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu py-1">
-                                    <div class="text-[11px] opacity-60 flex justify-between items-center"><span data-key="b1">RESNOVAE</span> <i class="fa-solid fa-caret-down"></i></div>
-                                    <div class="sub-sub-menu mt-1">
-                                        <div class="has-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center"><span data-key="p6">Face Solution</span> <i class="fa-solid fa-plus text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-menu">
-                                                <a href="#" class="product-item" data-key="p4">CORE IMPACT</a>
+                                <div class="has-sub-sub-sub-menu">
+                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
+                                    <div class="sub-sub-sub-menu mt-1">
+                                        <!-- Face Solution with Core Impact -->
+                                        <div class="has-sub-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Face Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
+                                            <div class="sub-sub-sub-sub-menu">
+                                                <a href="#" class="product-item">CORE IMPACT</a>
                                             </div>
                                         </div>
-                                        <div class="has-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center"><span data-key="p7">Scalp Solution</span> <i class="fa-solid fa-plus text-[7px]"></i></div>
-                                            <div class="sub-sub-menu">
-                                                <a href="#" class="product-item" data-key="p5">HYPER SHOT</a>
+                                        <!-- Scalp Solution with Hyper Shot -->
+                                        <div class="has-sub-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
+                                            <div class="sub-sub-sub-sub-menu">
+                                                <a href="#" class="product-item">HYPER SHOT</a>
                                             </div>
                                         </div>
                                     </div>
@@ -265,16 +268,14 @@
                     </div>
                 </div>
 
-                <a href="#" class="menu-item orbitron text-sm uppercase"><span data-key="m6">COMMERCE SITE</span></a>
-                <a href="#contact" onclick="toggleMenu()" class="menu-item orbitron text-sm uppercase"><span data-key="m7">CONTACT</span></a>
+                <a href="#" class="menu-item orbitron text-sm uppercase text-white/70">COMMERCE SITE</a>
+                <a href="#contact" onclick="toggleMenu()" class="menu-item orbitron text-sm uppercase text-white/70">CONTACT</a>
             </nav>
 
-            <div class="mt-auto pt-8 border-t border-white/5">
-                <div class="flex gap-5 text-white/30">
-                    <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-youtube"></i></a>
-                </div>
+            <div class="mt-auto pt-8 border-t border-white/5 flex gap-5 text-white/20">
+                <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/medifab_global/" target="_blank" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -282,145 +283,89 @@
     <!-- Main Navigation Bar -->
     <nav class="nav-glass py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="orbitron text-xl md:text-2xl font-black text-[#00f2ff] tracking-tighter cursor-pointer">MEDIPEP</div>
-        <div class="flex items-center gap-4 md:gap-6">
-            <div class="flex items-center gap-3">
-                <button id="flag-en" onclick="setLanguage('en')" class="flag-btn active" title="English">
-                    <svg viewBox="0 0 7410 3900" xmlns="http://www.w3.org/2000/svg"><rect width="7410" height="3900" fill="#b22234"/><path d="M0,300H7410M0,900H7410M0,1500H7410M0,2100H7410M0,2700H7410M0,3300H7410" stroke="#fff" stroke-width="300"/><rect width="2964" height="2100" fill="#3c3b6e"/><g fill="#fff"><g id="s"><g id="r"><polygon id="star" points="0,-123 72,100 -116,-38 116,-38 -72,100" transform="scale(0.8)"/><use href="#star" x="494"/><use href="#star" x="988"/><use href="#star" x="1482"/><use href="#star" x="1976"/></g><use href="#r" x="247" y="210"/></g><use href="#s" y="420"/><use href="#s" y="840"/><use href="#s" y="1260"/><use href="#r" y="1680"/></g></svg>
-                </button>
-                <button id="flag-ko" onclick="setLanguage('ko')" class="flag-btn" title="Korean">
-                    <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="24" fill="#fff"/><g transform="translate(18 12)"><circle r="6" fill="#c60e2e"/><path d="M-6 0a6 6 0 0 1 12 0" fill="#003478" transform="rotate(-34)"/></g><g fill="#000"><g transform="translate(10.2 6.8) rotate(-34)"><rect x="-2.5" y="-3.5" width="5" height="1"/><rect x="-2.5" y="-2" width="5" height="1"/><rect x="-2.5" y="-0.5" width="5" height="1"/></g><g transform="translate(25.8 17.2) rotate(-34)"><rect x="-2.5" y="2.5" width="5" height="1"/><rect x="-2.5" y="1" width="5" height="1"/><rect x="-2.5" y="-0.5" width="5" height="1"/></g><g transform="translate(25.8 6.8) rotate(34)"><rect x="-2.5" y="-3.5" width="2.2" height="1"/><rect x="0.3" y="-3.5" width="2.2" height="1"/><rect x="-2.5" y="-2" width="5" height="1"/><rect x="-2.5" y="-0.5" width="2.2" height="1"/><rect x="0.3" y="-0.5" width="2.2" height="1"/></g><g transform="translate(10.2 17.2) rotate(34)"><rect x="-2.5" y="2.5" width="2.2" height="1"/><rect x="0.3" y="2.5" width="2.2" height="1"/><rect x="-2.5" y="1" width="2.2" height="1"/><rect x="0.3" y="1" width="2.2" height="1"/><rect x="-2.5" y="-0.5" width="2.2" height="1"/><rect x="0.3" y="-0.5" width="2.2" height="1"/></g></g></svg>
-                </button>
-            </div>
-            <button onclick="toggleMenu()" class="text-white/40 hover:text-[#00f2ff] text-2xl transition"><i class="fa-solid fa-bars"></i></button>
-        </div>
+        <button onclick="toggleMenu()" class="text-white/40 hover:text-[#00f2ff] text-2xl transition"><i class="fa-solid fa-bars"></i></button>
     </nav>
 
     <!-- Hero Section -->
     <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-12">
         <div class="hero-video-container"><video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dnzaz71su/video/upload/grok-video-a8991c85-8906-4de6-96ea-a72cf0643c4e_n1stst.mp4" type="video/mp4"></video></div>
         <div class="hero-overlay"></div>
-        <div class="scanline"></div>
 
         <div class="relative z-10 w-full max-w-5xl px-6 text-center">
-            <span class="orbitron text-[#00f2ff] text-[10px] md:text-sm font-bold tracking-[0.4em] mb-6 block uppercase opacity-80" data-key="hero-sub">Next-Generation Bio Materials</span>
+            <span class="orbitron text-[#00f2ff] text-[10px] md:text-sm font-bold tracking-[0.4em] mb-6 block uppercase opacity-80">Next-Generation Bio Materials</span>
             <h1 class="hero-title text-4xl sm:text-5xl md:text-8xl font-black orbitron mb-8 leading-tight tracking-tighter drop-shadow-2xl">
                 MEDIPEP <span class="text-[#00f2ff] italic underline decoration-white/10 underline-offset-[8px] md:underline-offset-[16px]">GLOBAL</span>
             </h1>
-            <p class="hero-desc text-white/60 max-w-2xl mx-auto text-sm md:text-xl font-light mb-12 leading-relaxed" data-key="hero-desc">Pioneering the future of bio-synthesis through revolutionary molecular architecture and engineering.</p>
+            <p class="hero-desc text-white/60 max-w-2xl mx-auto text-sm md:text-xl font-light mb-12 leading-relaxed">Pioneering the future of bio-synthesis through revolutionary molecular architecture and engineering.</p>
 
             <div class="flex flex-col items-center gap-4 md:gap-6">
-                <a href="https://economic-cent-2b8.notion.site/MediFab-Co-Ltd-Company-Introduction-2ef465327095809e8223d649f43a1489?pvs=73" target="_blank" class="glow-btn px-10 md:px-20 py-4 md:py-5 rounded-full font-bold orbitron text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all" data-key="btn-profile">Company Profile</a>
+                <!-- Company Profile Button: White border, Blue hover -->
+                <a href="https://economic-cent-2b8.notion.site/MediFab-Co-Ltd-Company-Introduction-2ef465327095809e8223d649f43a1489?pvs=73" target="_blank" class="glow-btn px-10 md:px-20 py-4 md:py-5 rounded-full font-bold orbitron text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all">Company Profile</a>
                 <div class="flex flex-col gap-3 w-full items-center">
-                    <a href="http://www.resnovae.kr/" target="_blank" class="secondary-btn" data-key="btn-medical">Medical Solutions</a>
-                    <a href="https://resnovae.co.kr/" target="_blank" class="secondary-btn" data-key="btn-cosmetic">Cosmetic Solutions</a>
-                    <a href="https://resnovae.co.kr/" target="_blank" class="secondary-btn" data-key="btn-beauty">Beauty Tech Solutions</a>
+                    <a href="http://www.resnovae.kr/" target="_blank" class="secondary-btn">Medical Solutions</a>
+                    <a href="https://resnovae.co.kr/" target="_blank" class="secondary-btn">Cosmetic Solutions</a>
+                    <a href="https://resnovae.co.kr/" target="_blank" class="secondary-btn">Beauty Tech Solutions</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Leadership Section -->
-    <section id="leadership" class="min-h-screen py-24 md:py-40 px-4 md:px-12 bg-black relative">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="orbitron text-3xl md:text-5xl font-black mb-16 md:mb-24 text-center tracking-[0.2em] uppercase" data-key="m2">Leadership</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10">
-                <!-- CEO: Dr. Cha -->
+    <!-- Leadership Section: Fixed for Z Fold -->
+    <section id="leadership" class="py-24 md:py-40 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="orbitron text-3xl md:text-5xl font-black mb-16 text-center tracking-[0.2em] uppercase">Leadership</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="leadership-card text-center flex flex-col items-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400 shadow-inner">
-                        <i class="fa-solid fa-user-tie text-3xl md:text-4xl"></i>
-                    </div>
-                    <div class="text-[9px] md:text-[10px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase" data-key="role-ceo">CEO</div>
-                    <div class="leadership-name text-lg md:text-xl font-bold" data-key="name-ceo">Dr. Cha</div>
+                    <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400 shadow-inner"><i class="fa-solid fa-user-tie text-3xl"></i></div>
+                    <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CEO</div>
+                    <div class="text-xl font-bold">Dr. Cha</div>
                 </div>
-
-                <!-- COO: Mr. Shin -->
                 <div class="leadership-card text-center flex flex-col items-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400">
-                        <i class="fa-solid fa-user-gear text-3xl md:text-4xl"></i>
-                    </div>
-                    <div class="text-[9px] md:text-[10px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase" data-key="role-coo">COO</div>
-                    <div class="leadership-name text-lg md:text-xl font-bold" data-key="name-coo">Mr. Shin</div>
+                    <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-user-gear text-3xl"></i></div>
+                    <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">COO</div>
+                    <div class="text-xl font-bold">Mr. Shin</div>
                 </div>
-
-                <!-- CFO: Mr. Seo -->
                 <div class="leadership-card text-center flex flex-col items-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400">
-                        <i class="fa-solid fa-chart-line text-3xl md:text-4xl"></i>
-                    </div>
-                    <div class="text-[9px] md:text-[10px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase" data-key="role-cfo">CFO</div>
-                    <div class="leadership-name text-lg md:text-xl font-bold" data-key="name-cfo">Mr. Seo</div>
+                    <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-chart-line text-3xl"></i></div>
+                    <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CFO</div>
+                    <div class="text-xl font-bold">Mr. Seo</div>
                 </div>
-
-                <!-- CTO: Dr. Kim -->
                 <div class="leadership-card text-center flex flex-col items-center">
-                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400">
-                        <i class="fa-solid fa-microscope text-3xl md:text-4xl"></i>
-                    </div>
-                    <div class="text-[9px] md:text-[10px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase" data-key="role-cto">CTO</div>
-                    <div class="leadership-name text-lg md:text-xl font-bold" data-key="name-cto">Dr. Kim</div>
+                    <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-microscope text-3xl"></i></div>
+                    <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CTO</div>
+                    <div class="text-xl font-bold">Dr. Kim</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section: Fluid Email for Z Fold -->
     <section id="contact" class="py-24 px-6 md:px-12 bg-neutral-900 overflow-hidden">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="orbitron text-3xl md:text-5xl font-black mb-12 uppercase tracking-widest" data-key="m7">Contact</h2>
-            <div class="bg-black/50 p-6 md:p-10 rounded-3xl border border-white/10">
-                <p class="text-white/40 mb-8 text-sm md:text-base" data-key="contact-desc">Please reach out to us for global partnerships and inquiries.</p>
-                <div class="flex flex-col gap-4 text-cyan-400 orbitron font-bold text-base sm:text-lg md:text-2xl">
-                    <!-- Email address with break-all to prevent cropping on narrow screens like Z Fold -->
-                    <a href="mailto:contact@imedifab.com" class="hover:underline transition break-all px-2">contact@imedifab.com</a>
+            <h2 class="orbitron text-3xl md:text-5xl font-black mb-12 uppercase tracking-widest">Contact</h2>
+            <div class="bg-black/50 p-8 md:p-14 rounded-3xl border border-white/10 flex flex-col items-center">
+                <p class="text-white/40 mb-10 text-sm md:text-base">Please reach out to us for global partnerships and inquiries.</p>
+                <div class="w-full flex justify-center">
+                    <a href="mailto:contact@imedifab.com" class="email-link orbitron font-bold uppercase tracking-tight md:tracking-widest">contact@imedifab.com</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-10 px-6 md:px-12 bg-black border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] orbitron font-bold tracking-widest text-white/20">
-        <div class="text-center md:text-left">&copy; 2026 MEDIPEP GLOBAL INC. ALL RIGHTS RESERVED.</div>
-        <div class="flex gap-6"><span>SEOUL CENTER</span><span>BOSTON HUB</span></div>
+    <!-- Footer: Cleaned up as requested -->
+    <footer class="py-12 px-6 bg-black border-t border-white/5 flex flex-col items-center gap-6">
+        <div class="orbitron text-2xl font-black text-white/40 tracking-tighter uppercase">MEDIFAB</div>
+        <div class="text-[9px] md:text-[11px] orbitron font-bold tracking-[0.4em] text-white/20 text-center uppercase">
+            &copy;2026. MEDIFAB. All Rights Reserved.
+        </div>
+        <div class="flex gap-8 text-white/20">
+             <a href="https://www.instagram.com/medifab_global/" target="_blank" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+             <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+             <a href="#" class="hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-youtube"></i></a>
+        </div>
     </footer>
 
     <script>
-        const i18n = {
-            en: {
-                "hero-sub": "Next-Generation Bio Materials",
-                "hero-desc": "Pioneering the future of bio-synthesis through revolutionary molecular architecture and engineering.",
-                "btn-profile": "Company Profile", "btn-medical": "Medical Solutions", "btn-cosmetic": "Cosmetic Solutions", "btn-beauty": "Beauty Tech Solutions",
-                "scroll": "Scroll", "menu-title": "NAVIGATION", "m1": "HISTORY", "m2": "LEADERSHIP", "m3": "TECH", "m4": "MATERIALS", "m5": "Products | Brands", "m6": "Commerce Site", "m7": "Contact",
-                "s5": "Skin Booster", "s6": "Cosmetics", "s7": "Beauty Home-care Device", "b1": "RESNOVAE", "b2": "MEDINOVAE", 
-                "p1-short": "CRYSTAL", "p2-short": "CRYSTAL PLUS", "p3-short": "SCALP MD", "p4": "CORE IMPACT", "p5": "HYPER SHOT", "p6": "Face Solution", "p7": "Scalp Solution",
-                "role-ceo": "CEO", "role-coo": "COO", "role-cfo": "CFO", "role-cto": "CTO",
-                "name-ceo": "Dr. Cha", "name-coo": "Mr. Shin", "name-cfo": "Mr. Seo", "name-cto": "Dr. Kim",
-                "contact-desc": "Please reach out to us for global partnerships and inquiries."
-            },
-            ko: {
-                "hero-sub": "차세대 바이오 소재 연구소",
-                "hero-desc": "혁신적인 분자 설계와 공학을 통해 바이오 합성의 미래를 개척합니다.",
-                "btn-profile": "회사 소개서", "btn-medical": "메디컬 솔루션", "btn-cosmetic": "코스메틱 솔루션", "btn-beauty": "뷰티 테크 솔루션",
-                "scroll": "스크롤", "menu-title": "네비게이션", "m1": "회사 연혁", "m2": "리더십", "m3": "핵심 기술", "m4": "핵심 소재", "m5": "제품 | 브랜드", "m6": "커머스 사이트", "m7": "문의하기",
-                "s5": "스킨 부스터", "s6": "화장품", "s7": "뷰티 홈케어 디바이스", "b1": "레스노베", "b2": "메디노베", 
-                "p1-short": "크리스탈", "p2-short": "크리스탈 플러스", "p3-short": "스칼프 MD", "p4": "코어임팩트", "p5": "하이퍼샷", "p6": "얼굴 솔루션", "p7": "두피 솔루션",
-                "role-ceo": "대표이사", "role-coo": "운영이사", "role-cfo": "재무이사", "role-cto": "기술이사 (CTO)",
-                "name-ceo": "차 박사", "name-coo": "신 이사", "name-cfo": "서 이사", "name-cto": "김 박사",
-                "contact-desc": "글로벌 파트너십 및 기타 문의는 아래 연락처로 문의해 주세요."
-            }
-        };
-
-        let currentLang = 'en';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (i18n[currentLang][key]) el.textContent = i18n[currentLang][key];
-            });
-            document.getElementById('flag-en').classList.toggle('active', lang === 'en');
-            document.getElementById('flag-ko').classList.toggle('active', lang === 'ko');
-        }
-
         function toggleMenu() {
             const sideMenu = document.getElementById('side-menu');
             const overlay = document.getElementById('menu-overlay');
@@ -429,7 +374,18 @@
             document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
 
-        window.onload = () => setLanguage('en');
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === "#") return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
