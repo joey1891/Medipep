@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Medipep | Bio-Material Innovation</title>
     
-    <!-- SEO & SNS Share (Thumbnail) Tags -->
+    <!-- SEO & SNS Share Tags -->
     <meta name="description" content="Pioneering the future of bio-synthesis through revolutionary molecular architecture.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Medipep | Bio-Material Innovation">
@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://res.cloudinary.com/dnzaz71su/image/upload/v1769250622/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-01-24_142154_eam5qh.png">
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -89,18 +89,12 @@
         /* Menu Item Styles */
         .menu-item { padding: 1rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; transition: 0.3s; }
         .menu-item:hover { color: var(--cyan-accent); }
-        
         .sub-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; background: rgba(255, 255, 255, 0.02); padding-left: 1rem; }
         .has-sub-menu:hover > .sub-menu { max-height: 2500px; }
-
         .sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.4s; border-left: 1px solid rgba(0, 242, 255, 0.1); margin-left: 0.5rem; padding-left: 0.8rem; }
         .has-sub-sub-menu:hover > .sub-sub-menu { max-height: 800px; }
-
         .sub-sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.4s; border-left: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.25rem; padding-left: 1rem; }
         .has-sub-sub-sub-menu:hover > .sub-sub-sub-menu { max-height: 500px; }
-
-        .sub-sub-sub-sub-menu { max-height: 0; overflow: hidden; transition: 0.3s; border-left: 1px solid rgba(255, 255, 255, 0.03); margin-top: 0.2rem; padding-left: 1rem; }
-        .has-sub-sub-sub-sub-menu:hover > .sub-sub-sub-sub-menu { max-height: 200px; }
 
         .product-item { font-size: 0.75rem; padding: 0.4rem 0; color: rgba(255, 255, 255, 0.35); display: block; transition: 0.3s; text-transform: uppercase; }
         .product-item:hover { color: var(--cyan-accent); }
@@ -110,12 +104,12 @@
             display: inline-block;
             transition: all 0.4s ease;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-            border: 1px solid #ffffff; /* White default border */
+            border: 1px solid #ffffff; /* Default white border */
             background: rgba(255, 255, 255, 0.03);
             text-align: center;
         }
         .glow-btn:hover { 
-            background-color: var(--cyan-accent); /* Blue hover effect */
+            background-color: var(--cyan-accent); /* Blue hover */
             color: black; 
             border-color: var(--cyan-accent);
             box-shadow: 0 0 35px rgba(0, 242, 255, 0.6); 
@@ -132,32 +126,42 @@
         }
         .secondary-btn:hover { border-color: var(--cyan-accent); color: var(--cyan-accent); background: rgba(0, 242, 255, 0.05); }
 
-        /* Leadership Cards - Optimized for mobile/fold */
+        /* Fluid Typography for Headers (Z Fold Fix) */
+        .fluid-header {
+            font-size: clamp(1.8rem, 10vw, 5rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            word-wrap: break-word;
+        }
+
+        /* Leadership Section Styles */
         .leadership-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2rem 1rem; border-radius: 2rem; transition: 0.4s;
+            padding: 2.5rem 1.5rem; border-radius: 2rem; transition: 0.4s;
             width: 100%;
         }
 
-        /* Email No Wrapping Fix */
+        /* Email Address: No wrapping, fluid size for Fold */
         .email-link {
             white-space: nowrap;
             display: inline-block;
-            font-size: clamp(0.7rem, 4.2vw, 1.8rem); /* Fluid size for Z Fold */
+            font-size: clamp(0.65rem, 4.5vw, 1.8rem); 
             color: var(--cyan-accent);
             text-decoration: none;
             transition: 0.3s;
             max-width: 100%;
+            letter-spacing: 0.05em;
         }
         .email-link:hover { text-decoration: underline; opacity: 0.8; }
 
-        /* Mobile specific adjustments */
         @media (max-width: 480px) {
-            .hero-title { font-size: clamp(2rem, 11vw, 4.5rem) !important; }
-            .hero-desc { font-size: 0.85rem !important; padding: 0 15px; }
-            #leadership { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .hero-title { font-size: clamp(2rem, 12vw, 4.5rem) !important; }
+            .hero-desc { font-size: 0.85rem !important; padding: 0 10px; }
+            #leadership, #contact { padding-left: 1.25rem; padding-right: 1.25rem; }
             .grid-cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .leadership-card { padding: 1.5rem 1rem; }
         }
     </style>
 </head>
@@ -173,7 +177,7 @@
                 <button onclick="toggleMenu()" class="text-white/60 text-2xl"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
-            <nav class="flex flex-col gap-1">
+            <nav class="flex flex-col gap-1 overflow-y-auto pr-2">
                 <a href="#history" onclick="toggleMenu()" class="menu-item orbitron text-sm">COMPANY HISTORY</a>
                 <a href="#leadership" onclick="toggleMenu()" class="menu-item orbitron text-sm">LEADERSHIP</a>
                 
@@ -187,42 +191,40 @@
                 <div class="menu-item-container has-sub-menu">
                     <div class="menu-item orbitron text-sm flex justify-between items-center text-white/50">CORE MATERIALS <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
                     <div class="sub-menu">
-                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">CHITOGEN™</a>
-                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">REGENMATRIX™</a>
-                        <a href="#" class="block py-3 text-xs opacity-60 uppercase font-bold">CHITOGENIX™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 font-bold">CHITOGEN™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 font-bold">REGENMATRIX™</a>
+                        <a href="#" class="block py-3 text-xs opacity-60 font-bold">CHITOGENIX™</a>
                     </div>
                 </div>
 
-                <!-- Products | Brands: Accurate Hierarchy -->
+                <!-- Products | Brands: 5-Level Structure -->
                 <div class="menu-item-container has-sub-menu">
-                    <div class="menu-item orbitron text-sm flex justify-between items-center text-cyan-400 font-bold">Products | Brands <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
+                    <div class="menu-item orbitron text-sm flex justify-between items-center text-cyan-400 font-bold tracking-widest">PRODUCTS | BRANDS <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
                     <div class="sub-menu">
                         
                         <!-- 1. Skin Booster -->
                         <div class="has-sub-sub-menu py-2 border-b border-white/5">
                             <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Skin Booster <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu">
+                                <div class="has-sub-sub-sub-menu py-1">
                                     <div class="text-[11px] opacity-60 flex justify-between items-center font-bold">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
                                     <div class="sub-sub-sub-menu mt-1">
-                                        <!-- Face Solution -->
-                                        <div class="has-sub-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Face Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-sub-menu">
+                                        <div class="has-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 uppercase">Face Solution <i class="fa-solid fa-chevron-right text-[7px] ml-1"></i></div>
+                                            <div class="sub-sub-menu mt-1">
                                                 <a href="#" class="product-item">CRYSTAL</a>
                                                 <a href="#" class="product-item">CRYSTAL PLUS</a>
                                             </div>
                                         </div>
-                                        <!-- Scalp Solution -->
-                                        <div class="has-sub-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-sub-menu">
+                                        <div class="has-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 uppercase">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px] ml-1"></i></div>
+                                            <div class="sub-sub-menu mt-1">
                                                 <a href="#" class="product-item">SCALP MD</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="block py-2 text-[11px] opacity-60 uppercase">MEDINOVAE</a>
+                                <a href="#" class="block py-2 text-[11px] opacity-60 uppercase font-bold">MEDINOVAE</a>
                             </div>
                         </div>
 
@@ -230,8 +232,8 @@
                         <div class="has-sub-sub-menu py-2 border-b border-white/5">
                             <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Cosmetics <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu">
-                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold text-white">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
+                                <div class="has-sub-sub-sub-menu py-1">
+                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
                                     <div class="sub-sub-sub-menu mt-1">
                                         <a href="#" class="product-item">Face Solution</a>
                                         <a href="#" class="product-item">Scalp Solution</a>
@@ -244,20 +246,18 @@
                         <div class="has-sub-sub-menu py-2">
                             <div class="text-xs flex justify-between items-center opacity-80 uppercase font-bold text-white">Beauty Home-care Device <i class="fa-solid fa-plus text-[8px]"></i></div>
                             <div class="sub-sub-menu mt-2">
-                                <div class="has-sub-sub-sub-menu">
-                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
+                                <div class="has-sub-sub-sub-menu py-1">
+                                    <div class="text-[11px] opacity-60 flex justify-between items-center font-bold text-white">RESNOVAE <i class="fa-solid fa-caret-down"></i></div>
                                     <div class="sub-sub-sub-menu mt-1">
-                                        <!-- Face Solution with Core Impact -->
-                                        <div class="has-sub-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Face Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-sub-menu">
+                                        <div class="has-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 uppercase">Face Solution <i class="fa-solid fa-chevron-right text-[7px] ml-1"></i></div>
+                                            <div class="sub-sub-menu mt-1">
                                                 <a href="#" class="product-item">CORE IMPACT</a>
                                             </div>
                                         </div>
-                                        <!-- Scalp Solution with Hyper Shot -->
-                                        <div class="has-sub-sub-sub-sub-menu py-1">
-                                            <div class="text-[10px] opacity-40 flex justify-between items-center">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px]"></i></div>
-                                            <div class="sub-sub-sub-sub-menu">
+                                        <div class="has-sub-sub-sub-menu py-1">
+                                            <div class="text-[10px] opacity-40 uppercase">Scalp Solution <i class="fa-solid fa-chevron-right text-[7px] ml-1"></i></div>
+                                            <div class="sub-sub-menu mt-1">
                                                 <a href="#" class="product-item">HYPER SHOT</a>
                                             </div>
                                         </div>
@@ -269,7 +269,7 @@
                 </div>
 
                 <a href="#" class="menu-item orbitron text-sm uppercase text-white/70">COMMERCE SITE</a>
-                <a href="#contact" onclick="toggleMenu()" class="menu-item orbitron text-sm uppercase text-white/70">CONTACT</a>
+                <a href="#contact" onclick="toggleMenu()" class="menu-item orbitron text-sm uppercase text-white/70 font-bold">CONTACT</a>
             </nav>
 
             <div class="mt-auto pt-8 border-t border-white/5 flex gap-5 text-white/20">
@@ -299,7 +299,7 @@
             <p class="hero-desc text-white/60 max-w-2xl mx-auto text-sm md:text-xl font-light mb-12 leading-relaxed">Pioneering the future of bio-synthesis through revolutionary molecular architecture and engineering.</p>
 
             <div class="flex flex-col items-center gap-4 md:gap-6">
-                <!-- Company Profile Button: White border, Blue hover -->
+                <!-- Company Profile: White border default, Blue on Hover -->
                 <a href="https://economic-cent-2b8.notion.site/MediFab-Co-Ltd-Company-Introduction-2ef465327095809e8223d649f43a1489?pvs=73" target="_blank" class="glow-btn px-10 md:px-20 py-4 md:py-5 rounded-full font-bold orbitron text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all">Company Profile</a>
                 <div class="flex flex-col gap-3 w-full items-center">
                     <a href="http://www.resnovae.kr/" target="_blank" class="secondary-btn">Medical Solutions</a>
@@ -310,49 +310,55 @@
         </div>
     </main>
 
-    <!-- Leadership Section: Fixed for Z Fold -->
+    <!-- Leadership Section -->
     <section id="leadership" class="py-24 md:py-40 bg-black relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="orbitron text-3xl md:text-5xl font-black mb-16 text-center tracking-[0.2em] uppercase">Leadership</h2>
+        <div class="max-w-7xl mx-auto px-4 md:px-12">
+            <!-- Fluid Header: Scales down automatically on narrow screens -->
+            <h2 class="orbitron fluid-header font-black mb-16 text-center tracking-[0.2em]">Leadership</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="leadership-card text-center flex flex-col items-center">
                     <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400 shadow-inner"><i class="fa-solid fa-user-tie text-3xl"></i></div>
                     <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CEO</div>
-                    <div class="text-xl font-bold">Dr. Cha</div>
+                    <div class="text-xl font-bold font-mono">Dr. Cha</div>
                 </div>
                 <div class="leadership-card text-center flex flex-col items-center">
                     <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-user-gear text-3xl"></i></div>
                     <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">COO</div>
-                    <div class="text-xl font-bold">Mr. Shin</div>
+                    <div class="text-xl font-bold font-mono">Mr. Shin</div>
                 </div>
                 <div class="leadership-card text-center flex flex-col items-center">
                     <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-chart-line text-3xl"></i></div>
                     <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CFO</div>
-                    <div class="text-xl font-bold">Mr. Seo</div>
+                    <div class="text-xl font-bold font-mono">Mr. Seo</div>
                 </div>
                 <div class="leadership-card text-center flex flex-col items-center">
                     <div class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-cyan-400"><i class="fa-solid fa-microscope text-3xl"></i></div>
                     <div class="text-[9px] font-bold text-cyan-400 orbitron tracking-widest mb-1 uppercase font-bold">CTO</div>
-                    <div class="text-xl font-bold">Dr. Kim</div>
+                    <div class="text-xl font-bold font-mono">Dr. Kim</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section: Fluid Email for Z Fold -->
+    <!-- Contact Section: Inner Box Removed as requested -->
     <section id="contact" class="py-24 px-6 md:px-12 bg-neutral-900 overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="orbitron text-3xl md:text-5xl font-black mb-12 uppercase tracking-widest">Contact</h2>
-            <div class="bg-black/50 p-8 md:p-14 rounded-3xl border border-white/10 flex flex-col items-center">
-                <p class="text-white/40 mb-10 text-sm md:text-base">Please reach out to us for global partnerships and inquiries.</p>
-                <div class="w-full flex justify-center">
-                    <a href="mailto:contact@imedifab.com" class="email-link orbitron font-bold uppercase tracking-tight md:tracking-widest">contact@imedifab.com</a>
-                </div>
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+            <!-- Fluid Header to prevent cropping -->
+            <h2 class="orbitron fluid-header font-black mb-12 tracking-widest">Contact</h2>
+            
+            <!-- Box removed, text directly on background -->
+            <p class="text-white/40 mb-10 text-sm md:text-lg max-w-2xl">
+                Please reach out to us for global partnerships and inquiries.
+            </p>
+            
+            <div class="w-full flex justify-center overflow-visible">
+                <!-- Non-breaking email with dynamic sizing for all devices -->
+                <a href="mailto:contact@imedifab.com" class="email-link orbitron font-bold uppercase">contact@imedifab.com</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer: Cleaned up as requested -->
+    <!-- Updated Footer -->
     <footer class="py-12 px-6 bg-black border-t border-white/5 flex flex-col items-center gap-6">
         <div class="orbitron text-2xl font-black text-white/40 tracking-tighter uppercase">MEDIFAB</div>
         <div class="text-[9px] md:text-[11px] orbitron font-bold tracking-[0.4em] text-white/20 text-center uppercase">
@@ -374,7 +380,7 @@
             document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
 
-        // Smooth scroll
+        // Smooth scroll implementation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
