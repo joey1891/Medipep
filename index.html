@@ -1416,6 +1416,22 @@
 
     <script>
         /* --- New Navigation Scripts --- */
+// 1. 홈(커버페이지)으로 이동하는 함수 (이름 통일: navigateToMain)
+function navigateToMain() {
+    // 햄버거 메뉴가 열려있다면 닫기
+    const btn = document.getElementById('hamburger-toggle');
+    const overlay = document.getElementById('full-menu-overlay');
+    if (overlay && overlay.classList.contains('open')) {
+        btn.classList.remove('active');
+        overlay.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    // 메인 뷰 상태로 전환
+    const state = { type: 'main', sourceSectionId: lastSectionId || 'hero' };
+    safePushState(state);
+    renderView(state);
+        
        function toggleHamburgerMenu() {
     const btn = document.getElementById('hamburger-toggle');
     const overlay = document.getElementById('full-menu-overlay');
